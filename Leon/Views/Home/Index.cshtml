@@ -1,0 +1,564 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!-- #region Jssor Slider Begin -->
+
+
+<script src="js/jssor.slider-28.1.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">window.jssor_1_slider_init = function() {
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $SpacingX: 20,
+                $SpacingY: 20
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 2000;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };</script>
+<style>
+        /* jssor slider loading skin spin css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @@keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /*jssor slider bullet skin 132 css*/
+        .jssorb132 {position:absolute;}
+        .jssorb132 .i {position:absolute;cursor:pointer;}
+        .jssorb132 .i .b {fill:#fff;fill-opacity:0.8;stroke:#000;stroke-width:1600;stroke-miterlimit:10;stroke-opacity:0.7;}
+        .jssorb132 .i:hover .b {fill:#000;fill-opacity:.7;stroke:#fff;stroke-width:2000;stroke-opacity:0.8;}
+        .jssorb132 .iav .b {fill:#000;stroke:#fff;stroke-width:2400;fill-opacity:0.8;stroke-opacity:1;}
+        .jssorb132 .i.idn {opacity:0.3;}
+
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+</style>
+<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;visibility:hidden;">
+    <!-- Loading Screen -->
+
+    <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;">
+        <div style="background-color:#d3890e;">
+            <img data-u="image" style="opacity:0.8;" src="img/pb-beer-1513436-1600.jpg" />
+            <div data-ts="flat" data-p="75" data-po="40% 50%" style="left:150px;top:40px;width:800px;height:300px;position:absolute;">
+                <div data-to="50% 50%" data-t="0" style="left:50px;top:520px;width:400px;height:100px;position:absolute;color:#f0a329;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;letter-spacing:0.5em;">BEER</div>
+                <div data-to="50% 50%" data-t="5" style="left:50px;top:710px;width:700px;height:100px;position:absolute;color:#f0a329;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;letter-spacing:0.5em;">MACHINE</div>
+            </div>
+        </div>
+        <div>
+            <img data-u="image" src="img/px-apartment-chairs-contemporary-2015560-1600.jpg" />
+        </div>
+        <div style="background-color:#000000;">
+            <img data-u="image" style="opacity:0.8;" src="img/px-back-view-boats-couple-2612852-1600.jpg" />
+        </div>
+        <div>
+            <img data-u="image" src="img/yamamoto.jpg" />
+        </div>
+        <div>
+            <img data-u="image" src="img/wine-1600.jpg" />
+        </div>
+    </div>
+    <!-- Bullet Navigator -->
+    <div data-u="navigator" class="jssorb132" style="position:absolute;bottom:24px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+        <div data-u="prototype" class="i" style="width:12px;height:12px;">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+            </svg>
+        </div>
+    </div>
+    <!-- Arrow Navigator -->
+    <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+        </svg>
+    </div>
+    <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+        </svg>
+    </div>
+</div>
+<script type="text/javascript">jssor_1_slider_init();</script>
+<!-- #endregion Jssor Slider End -->
+<!-- Hero/Intro Slider End -->
+<!-- About Section Start -->
+<div class="section section-padding overflow-hidden">
+    <div class="container">
+        <!-- Section Title Start -->
+        <div class="section-title" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="title">Şirkətimizin tanıtım videosu</h2>
+            <span></span>
+            <p class="sub-title"></p>
+        </div>
+        <!-- Section Title End -->
+        <!-- About Single Image Start -->
+
+        <iframe width="1200" height="600" src="https://www.youtube.com/embed/G5owyh7upjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="desc">
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration some form, by injected humour, or randomised words which don't look even slightly believable. Ifyouare going to use a passage of Lorem Ipsum, you need to be sure there isanything embarrassing hidden i the middletext.There are many variations of passages of Lorem Ipsum available, but the majority hsuffered alteration in some form, by injected humour.</p>
+        </div>
+
+        <!-- About Single Image End -->
+
+    </div>
+</div>
+
+<div class="col-lg-6 col-12 align-self-center mb-n7">
+    <!-- Feature Box Wrapper Start -->
+    <div class="feature-box-wrapper feature-box-border mb-7 pb-7" data-aos="fade-left" data-aos-delay="300">
+        <div class="feature-box-icon">
+            <img src="assets/images/icon/about-icon-1.png" alt="About Icon">
+        </div>
+        <div class="feature-content">
+            <h4 class="title">Cranes</h4>
+            <p>Leoncranelifts</p>
+        </div>
+    </div>
+    <!-- Feature Box Wrapper End -->
+    <!-- Feature Box Wrapper Start -->
+    <div class="feature-box-wrapper feature-box-border mb-7 pb-7" data-aos="fade-left" data-aos-delay="400">
+        <div class="feature-box-icon">
+            <img src="assets/images/icon/about-icon-2.png" alt="About Icon">
+        </div>
+        <div class="feature-content">
+            <h4 class="title">Elevators</h4>
+            <p>Leoncranelifts</p>
+        </div>
+    </div>
+    <!-- Feature Box Wrapper End -->
+    <!-- Feature Box Wrapper Start -->
+    <div class="feature-box-wrapper feature-box-border mb-7 pb-7" data-aos="fade-left" data-aos-delay="500">
+        <div class="feature-box-icon">
+            <img src="assets/images/icon/about-icon-3.png" alt="About Icon">
+        </div>
+        <div class="feature-content">
+            <h4 class="title">Escalators</h4>
+            <p>Leoncranelifts</p>
+        </div>
+    </div>
+    <!-- Feature Box Wrapper End -->
+</div>
+
+<!-- About Image/Content End -->
+<!-- About Section End -->
+<!-- Project Masonry Section Start -->
+<div class="section section-padding bg-secondary">
+    <div class="container">
+        <div class="row">
+            <!-- Section Title Start -->
+            <div class="col-12 section-title mb-0" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="title text-white">Bizim layihələrimiz</h2>
+                <span></span>
+                <p class="sub-title text-white"></p>
+            </div>
+            <!-- Section Title End -->
+            <!-- Tab Start -->
+            <div class="col-12 mb-4 text-center mt-7 mb-10 pb-2" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-tab mb-n1">
+                    <button data-filter="*" class="is-checked project-filter">Hamısı</button>
+                    <button data-filter=".cat-1" class="project-filter">Cranes</button>
+                    <button data-filter=".cat-2" class="project-filter">Elevators</button>
+                    <button data-filter=".cat-3" class="project-filter">Escalators</button>
+                    <button data-filter=".cat-4" class="project-filter">Parking</button>
+                </div>
+            </div>
+            <!-- Tab End -->
+        </div>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mesonry-list mb-n8">
+            <div class="resizer col"></div>
+            <!-- Single project Start -->
+            <div class="col cat-1 cat-4 mb-8">
+                <div class="single-project" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <a class="project-overlay" href="project-details.html">
+                            <img src="assets/images/project/1.jpg" alt="Project Image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="title"> <a href="project-details.html">Qaldırıcı kran</a></h4>
+
+                        <a class="link" href="project-details.html">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2 cat-3 mb-8">
+                <div class="single-project" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image">
+                        <a class="project-overlay" href="project-details.html">
+                            <img src="assets/images/project/2.jpg" alt="Project Image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="title"> <a href="project-details.html">Avto Parking</a></h4>
+
+                        <a class="link" href="project-details.html">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-3 cat-4 mb-8">
+                <div class="single-project" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image">
+                        <a class="project-overlay" href="project-details.html">
+                            <img src="assets/images/project/3.jpg" alt="Project Image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="title"> <a href="project-details.html">Escalatorlar</a></h4>
+
+                        <a class="link" href="project-details.html">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2 cat-3 mb-8">
+                <div class="single-project" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image">
+                        <a class="project-overlay" href="project-details.html">
+                            <img src="assets/images/project/4.jpg" alt="Project Image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="title"> <a href="project-details.html">Yük və sərnişin liftləri</a></h4>
+
+                        <a class="link" href="project-details.html">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-2 cat-1 mb-8">
+                <div class="single-project" data-aos="fade-up" data-aos-delay="700">
+                    <div class="project-image">
+                        <a class="project-overlay" href="project-details.html">
+                            <img src="assets/images/project/5.jpg" alt="Project Image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="title"> <a href="project-details.html">Metal konstruksiyalar</a></h4>
+
+                        <a class="link" href="project-details.html">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Portfolio End -->
+            <!-- Single Portfolio Start -->
+            <div class="col cat-4 cat-1 mb-8">
+                <div class="single-project" data-aos="fade-up" data-aos-delay="800">
+                    <div class="project-image">
+                        <a class="project-overlay" href="project-details.html">
+                            <img src="assets/images/project/6.jpg" alt="Project Image">
+                        </a>
+                    </div>
+                    <div class="project-content">
+                        <h4 class="title"> <a href="project-details.html">Submarin</a></h4>
+                        <a class="link" href="project-details.html">Ətraflı</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center mt-10">
+            <div class="load-more" data-aos="fade-up" data-aos-delay="500">
+                <a href="projects.html" class="btn btn-hover-secondary btn-primary"> <i class="fa fa-arrow-right mr-1"></i> More Projects</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Project Masonry Section End -->
+<!-- Team Section Start -->
+<div class="section section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Section Title Start -->
+            <div class="col-12 section-title" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="title">Bizim komandamız</h2>
+                <span></span>
+                <p class="sub-title"></p>
+            </div>
+            <!-- Section Title End -->
+        </div>
+        <div class="row row-cols-sm-2 row-cols-lg-4 row-cols-1 mb-n6">
+            <!-- Team Members Area Start -->
+            <div class="col mb-6">
+                <!-- Single Team member Start -->
+                <div class="single-team-member" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Team Member Images Start -->
+                    <div class="team-member-image">
+                        <img src="assets/images/team/1.jpg" alt="Team Member">
+                    </div>
+                    <!-- Team Member Images End -->
+                    <!-- Team Member Name/Social Identity Start -->
+                    <div class="team-member-content">
+                        <h2 class="name">test</h2>
+                        <span class="person-title">Director</span>
+
+                    </div>
+                    <!-- Team Member Name/Social Identity End -->
+                </div>
+                <!-- Single Team member End -->
+            </div>
+
+            <div class="col mb-6">
+                <!-- Single Team member Start -->
+                <div class="single-team-member" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Team Member Images Start -->
+                    <div class="team-member-image">
+                        <img src="assets/images/team/2.jpg" alt="Team Member">
+                    </div>
+                    <!-- Team Member Images End -->
+                    <!-- Team Member Name/Social Identity Start -->
+                    <div class="team-member-content">
+                        <h2 class="name">test</h2>
+                        <span class="person-title">Director</span>
+
+                    </div>
+                    <!-- Team Member Name/Social Identity End -->
+                </div>
+                <!-- Single Team member End -->
+            </div>
+
+            <div class="col mb-6">
+                <!-- Single Team member Start -->
+                <div class="single-team-member" data-aos="fade-up" data-aos-delay="500">
+                    <!-- Team Member Images Start -->
+                    <div class="team-member-image">
+                        <img src="assets/images/team/3.jpg" alt="Team Member">
+                    </div>
+                    <!-- Team Member Images End -->
+                    <!-- Team Member Name/Social Identity Start -->
+                    <div class="team-member-content">
+                        <h2 class="name">test</h2>
+                        <span class="person-title">Director</span>
+
+                    </div>
+                    <!-- Team Member Name/Social Identity End -->
+                </div>
+                <!-- Single Team member End -->
+            </div>
+
+            <div class="col mb-6">
+                <!-- Single Team member Start -->
+                <div class="single-team-member" data-aos="fade-up" data-aos-delay="600">
+                    <!-- Team Member Images Start -->
+                    <div class="team-member-image">
+                        <img src="assets/images/team/4.jpg" alt="Team Member">
+                    </div>
+                    <!-- Team Member Images End -->
+                    <!-- Team Member Name/Social Identity Start -->
+                    <div class="team-member-content">
+                        <h2 class="name">test</h2>
+                        <span class="person-title">Director</span>
+
+                    </div>
+                    <!-- Team Member Name/Social Identity End -->
+                </div>
+                <!-- Single Team member End -->
+            </div>
+            <!-- Team Members Area End -->
+        </div>
+    </div>
+</div>
+<!-- Team Section End -->
+<!-- Brand Logo Section Start -->
+<div class="section bg-secondary brand-logo-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <div class="brand-logo-carousel text-center">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper align-items-center">
+
+                            <!-- Single Brand Logo Start -->
+                            <div class="swiper-slide">
+                                <div class="brand-logo" data-aos="fade-up" data-aos-delay="300">
+                                    <img src="assets/images/brand-logo/1.png" alt="Brand Logo">
+                                </div>
+                            </div><br><br>
+                            <!-- Single Brand Logo End -->
+                            <!-- Single Brand Logo Start -->
+                            <div class="swiper-slide">
+                                <div class="brand-logo" data-aos="fade-up" data-aos-delay="400">
+                                    <img src="assets/images/brand-logo/2.png" alt="Brand Logo">
+                                </div>
+                            </div>
+                            <!-- Single Brand Logo End -->
+                            <!-- Single Brand Logo Start -->
+                            <div class="swiper-slide">
+                                <div class="brand-logo" data-aos="fade-up" data-aos-delay="500">
+                                    <img src="assets/images/brand-logo/3.png" alt="Brand Logo">
+                                </div>
+                            </div>
+                            <!-- Single Brand Logo End -->
+                            <!-- Single Brand Logo Start -->
+                            <div class="swiper-slide">
+                                <div class="brand-logo" data-aos="fade-up" data-aos-delay="600">
+                                    <img src="assets/images/brand-logo/4.png" alt="Brand Logo">
+                                </div>
+                            </div>
+                            <!-- Single Brand Logo End -->
+                            <!-- Single Brand Logo Start -->
+                            <div class="swiper-slide">
+                                <div class="brand-logo" data-aos="fade-up" data-aos-delay="700">
+                                    <img src="assets/images/brand-logo/2.png" alt="Brand Logo">
+                                </div>
+                            </div>
+                            <!-- Single Brand Logo End -->
+                            <!-- Single Brand Logo Start -->
+                            <div class="swiper-slide">
+                                <div class="brand-logo" data-aos="fade-up" data-aos-delay="700">
+                                    <img src="assets/images/brand-logo/3.png" alt="Brand Logo">
+                                </div>
+                            </div>
+                            <!-- Single Brand Logo End -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Brand Logo Section End -->
+<!-- pagination -->
+<div class="swiper-pagination"></div>
+
+
+<!-- Brand Logo Section End -->
+<!-- Blog Section Start -->
+<div class="section section-padding">
+    <div class="container">
+
+        <!-- Section Title Start -->
+        <div class="col-12 section-title" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="title">Son işlərimizdən</h2>
+            <span></span>
+            <p class="sub-title"></p>
+        </div>
+        <!-- Section Title End -->
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 mb-n6">
+
+            <div class="col mb-6">
+                <!-- Blog Single Post Start -->
+                <div class="blog-single-post-wrapper" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-thumb">
+                        <a class="blog-overlay" href="escalator.html">
+                            <img src="assets/images/blog/blog-post/1.jpg" alt="Blog Post">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="post-meta">
+                            <span>Tarix: 23 Sen 2020</span>
+                        </div>
+                        <h3 class="title"><a href="escalator.html">Bulvarda Eskalatorların quraşdırılması</a></h3>
+                        <p></p>
+                        <a href="escalator.html" class="btn btn-outline-matterhorn btn-hover-primary btn-sm">Ətraflı</a>
+                    </div>
+                </div>
+                <!-- Blog Single Post End -->
+            </div>
+
+            <div class="col mb-6">
+                <!-- Blog Single Post Start -->
+                <div class="blog-single-post-wrapper" data-aos="fade-up" data-aos-delay="400">
+                    <div class="blog-thumb">
+                        <a class="blog-overlay" href="elevator.html">
+                            <img src="assets/images/blog/blog-post/2.jpg" alt="Blog Post">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="post-meta">
+                            <span>Tarix: 14 Dek 2020</span>
+                        </div>
+                        <h3 class="title"><a href="elevator.html">Heydər Əliyev Fondu: Sərnişin lifti</a></h3>
+                        <p></p>
+                        <a href="elevator.html" class="btn btn-outline-matterhorn btn-hover-primary btn-sm">Ətraflı</a>
+                    </div>
+                </div>
+                <!-- Blog Single Post End -->
+            </div>
+
+            <div class="col mb-6">
+                <!-- Blog Single Post Start -->
+                <div class="blog-single-post-wrapper" data-aos="fade-up" data-aos-delay="500">
+                    <div class="blog-thumb">
+                        <a class="blog-overlay" href="escalator.html">
+                            <img src="assets/images/blog/blog-post/3.jpg" alt="Blog Post">
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <div class="post-meta">
+                            <span>Tarix: 07 Noy 2020</span>
+                        </div>
+                        <h3 class="title"><a href="escalator.html">Urologiya: Yük lifti</a></h3>
+                        <p></p>
+                        <a href="escalator.html" class="btn btn-outline-matterhorn btn-hover-primary btn-sm">Ətraflı</a>
+                    </div>
+                </div>
+                <!-- Blog Single Post End -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
