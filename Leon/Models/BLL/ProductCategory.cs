@@ -8,7 +8,7 @@ namespace Leon.Models.BLL
     public class ProductCategory
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string CategoryName { get; set; }
         public string ImageCode { get; set; }
 
         //primary key connection

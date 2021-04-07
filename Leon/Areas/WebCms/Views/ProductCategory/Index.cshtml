@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Leon.Models.BLL.ProductCategory>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/WebCms/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6 my-4 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header py-4">
+                Category
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between my-3" style="float:right">
+                   
+                    <a asp-action="Create" class="btn btn-outline-dark"><i class="fas fa-fw fa-plus"></i> Add Category</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-shorting">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th><span style="color:Highlight">Edit</span> - <span style="color:red">Delete</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr data-id="@item.Id">
+                                    <td>
+                                        <img src="~/img/@item.ImageCode" style="width: 50px;
+                                            height: 50px;
+                                            object-fit: cover;
+                                            border-radius: 10px;
+                                            filter: drop-shadow(20px);
+                                            filter: drop-shadow(3px 3px 4px #000);
+                                            display: block;
+                                            margin-left: auto;
+                                            margin-right: auto;" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CategoryName)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn text-primary"><i class="fas fa-fw fa-pencil-alt"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn text-warning" onclick="return confirm('Are you sure you want to delete it?')"><i class="fas fa-fw fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

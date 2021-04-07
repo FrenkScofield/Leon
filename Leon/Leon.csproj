@@ -18,8 +18,9 @@
     <Folder Include="Areas\WebCms\Data\" />
     <Folder Include="Areas\WebCms\Models\" />
     <Folder Include="Areas\WebCms\Views\Shared\" />
-    <Folder Include="Models\VM\" />
     <Folder Include="wwwroot\admin\" />
+    <Folder Include="wwwroot\img\category\" />
+    <Folder Include="wwwroot\img\imgProduct\" />
     <Folder Include="wwwroot\img\slider\" />
   </ItemGroup>
 

@@ -1,0 +1,96 @@
+﻿@model Leon.Models.BLL.ProductCategory
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/WebCms/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="row">
+    <div class="col-md-6 my-4 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header py-4">
+                Add Category <a asp-action="Index" class="float-right btn btn-outline-secondary">Back to index</a>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="POST" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="input-group mb-3">
+                        <fieldset class="radiogenel">
+                            <legend>Add Image</legend>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="image">image</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="hidden" name="category" value="">
+                                    <input type="file" class="custom-file-input imginput" id="image1" name="File" onchange="previewFile()">
+                                    <label class="custom-file-label" for="category">Choose file</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5">
+                                <img src="" id="img1" height="190" style="margin-bottom: 20px;" alt="no  image">
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CategoryName" class="control-label">Name</label>
+                        <input type="text" asp-for="CategoryName" class="form-control" />
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+<div class="row">
+    <div class="col-md-6 my-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-4">
+                Create  <a asp-action="Index" class="float-right btn btn-outline-secondary">Back to index</a>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="CategoryName" class="control-label">Name</label>
+                        <input type="text" asp-for="CategoryName" class="form-control" />
+                        <span asp-validation-for="CategoryName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="radiogenel">
+                            <legend>Add Image</legend>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="image">image</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="hidden" name="category" value="">
+                                    <input type="file" class="custom-file-input imginput" id="image1" name="File" onchange="previewFile()">
+                                    <label class="custom-file-label" for="category">Choose file</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5">
+                                <img src="" id="img1" height="190" style="margin-bottom: 20px;" alt="no  image">
+
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Add" class="btn btn-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
