@@ -37,13 +37,16 @@ namespace Leon.Controllers
             return View(viewModel);
         }
 
-        public async Task<IActionResult> Product()
+        public async Task<IActionResult> Product(int productCategoryId)
         {
             ViewModel viewModel = new ViewModel
             {
-                ProductCategories = await _context.ProductCategories.ToListAsync()
+                ProductCategories = await _context.ProductCategories.ToListAsync(),
+                Products = await _context.Products.Where(p => p.ProductCategoryId == productCategoryId)
+                                                  .ToListAsync(),
+                ShowOnlyCategories = productCategoryId == 0
             };
-
+            
             return View(viewModel);
         }
 

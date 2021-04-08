@@ -1,6 +1,7 @@
 ﻿using Leon.Models.BLL;
 using Leon.Models.DAL;
 using Leon.Models.Extensiyon;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +16,8 @@ namespace Leon.Areas.WebCms.Controllers
     [Area("WebCms")]
     // [Route("WebCms/")]
     [Route("WebCms/[controller]/[action]")]
+    [Authorize(Roles = "Admin")]
+
     public class ProductCategoryController : Controller
     {
         private readonly MyContext _context;

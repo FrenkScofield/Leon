@@ -7,7 +7,7 @@ namespace Leon.Models.BLL
 {
     public class File
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string UniqKod { get; set; }
         public string FolderName { get; set; }
         public string Size { get; set; }

@@ -2,6 +2,7 @@
 using Leon.Models.DAL;
 using Leon.Models.Extensiyon;
 using Leon.Models.VM;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,8 @@ namespace Leon.Areas.WebCms.Controllers
 {
     [Area("WebCms")]
     // [Route("WebCms/")]
+    [Authorize(Roles = "Admin")]
+
     [Route("WebCms/[controller]/[action]")]
     public class ProductController : Controller
     {
@@ -57,7 +60,7 @@ namespace Leon.Areas.WebCms.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ViewModel viewModel, IFormFile file)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var Catagory = await _context.ProductCategories.FindAsync(viewModel.Product.ProductCategoryId);
                 Product model = new Product()

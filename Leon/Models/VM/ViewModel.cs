@@ -16,6 +16,7 @@ namespace Leon.Models.VM
         public IEnumerable<SelectListItem> CategoryName { get; set; }
         public IEnumerable<Slider> Sliders { get; set; }
         public Slider Slider { get; set; }
+        public bool ShowOnlyCategories { get; set; }
 
     }
 }

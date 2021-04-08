@@ -5,48 +5,132 @@
 }
 
 
-<!-- Breadcrumb Section Start -->
-<div class="section breadcrumb-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="cr-breadcrumb-area">
-                    <h1 class="title">Məhsullar</h1>
-                    <ul class="breadcrumb-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><span>Məhsullar</span></li>
-                    </ul>
+@if (Model.ShowOnlyCategories)
+{
+
+    <!-- Breadcrumb Section Start -->
+    <div class="section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cr-breadcrumb-area">
+                        <h1 class="title">Məhsullar</h1>
+                        <ul class="breadcrumb-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Məhsullar</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Breadcrumb Section End -->
-<!-- Project Section Start -->
-<div class="section section-padding">
-    <div class="container">
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n8">
+    <!-- Breadcrumb Section End -->
+    <!-- Project Section Start -->
+    <div class="section section-padding">
+        <div class="container">
+            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n8">
+                @foreach (var item in Model.ProductCategories)
+                {
 
-            <!-- Single project Start -->
-            @foreach (var item in Model.ProductCategories)
-            {
+                    <div class="col mb-8">
+                        <div class="single-project" data-aos="fade-down" data-aos-delay="300">
+                            <a asp-controller="Home" asp-action="Product" asp-route-productCategoryId="@item.Id">
+                                content
+                                <div class="project-image">
 
-                <div class="col mb-8">
-                    <div class="single-project" data-aos="fade-down" data-aos-delay="300">
-                        <div class="project-image">
-                            <a class="project-overlay" href="@item.Url">
-                                <img src="~/img/@item.ImageCode" alt="Project Image">
+                                    <img src="~/img/@item.ImageCode" alt="Project Image">
+
+                                </div>
+                                <div class="project-content project-content-dark">
+                                    <h4 class="title"> @item.CategoryName</h4>
+                                </div>
                             </a>
                         </div>
-                        <div class="project-content project-content-dark">
-                            <h4 class="title"> <a href="">@item.CategoryName</a></h4>
-                        </div>
                     </div>
-                </div>
-            }
-            <!-- Single Portfolio End -->
+                }
 
+            </div>
         </div>
     </div>
-</div>
+}
+else
+{
+    <div class="section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="cr-breadcrumb-area">
+                        <h1 class="title">Eskalatorlar</h1>
+                        <ul class="breadcrumb-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><span>Eskalatorlar</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-9 m-auto">
+
+                    <div class="blog-details mb-10">
+
+                        <h1> Eskalatorların aşağıdakı növləri təklif olunur! </h1>
+
+                        <div class="desc">
+                            <br>
+                            @foreach (var item in Model.Products)
+                            {
+
+                                <h2> @item.Title </h2>
+                                <p>@item.Description</p>
+
+
+                                <div class="row mt-6">
+                                    <div class="col-sm-6 col-12 mb-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300">
+                                        <img class="fit-image" src="~/img/@item.ImageCode" alt="Blog">
+                                    </div>
+                                    <div class="col-sm-6 col-12 mb-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300">
+                                        <div class="project-info">
+                                            <h4 class="title mb-6"></h4>
+                                            <ul class="mb-n1">
+                                                <li><span>Firma:</span>@item.Company</li>
+                                                <li><span>Yük qaldırma:</span>@item.Lifting</li>
+                                                <li><span>Hündürlüyü:</span>@item.Height</li>
+                                                <li><span>Uzunluğu:</span>@item.Length</li>
+                                                <li><span>İş rejimi:</span>@item.OperatingMode</li>
+                                                <li><span>İstehsal tarixi:</span>@item.DateOfProduction</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="single-post-details-footer mt-10" data-aos="fade-up" data-aos-delay="300">
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+}
+
+
 <!-- Project Masonry Section End -->
