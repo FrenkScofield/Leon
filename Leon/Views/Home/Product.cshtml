@@ -1,0 +1,52 @@
+﻿@model Leon.Models.VM.ViewModel
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Breadcrumb Section Start -->
+<div class="section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cr-breadcrumb-area">
+                    <h1 class="title">Məhsullar</h1>
+                    <ul class="breadcrumb-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>Məhsullar</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Project Section Start -->
+<div class="section section-padding">
+    <div class="container">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n8">
+
+            <!-- Single project Start -->
+            @foreach (var item in Model.ProductCategories)
+            {
+
+                <div class="col mb-8">
+                    <div class="single-project" data-aos="fade-down" data-aos-delay="300">
+                        <div class="project-image">
+                            <a class="project-overlay" href="@item.Url">
+                                <img src="~/img/@item.ImageCode" alt="Project Image">
+                            </a>
+                        </div>
+                        <div class="project-content project-content-dark">
+                            <h4 class="title"> <a href="">@item.CategoryName</a></h4>
+                        </div>
+                    </div>
+                </div>
+            }
+            <!-- Single Portfolio End -->
+
+        </div>
+    </div>
+</div>
+<!-- Project Masonry Section End -->

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@*@model Leon.Models.VM.ViewModel*@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,20 +8,14 @@
     <title>leoncranelisft.az</title>
 
     <!-- Favicons -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-
-
-
-
-
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
 
-    <link rel="stylesheet" href="assets/css/vendor.min.css">
-    <link rel="stylesheet" href="assets/css/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/vendor.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
 
 
 </head>
@@ -52,7 +47,7 @@
                 <!-- Header Logo Start -->
                 <div class="col-lg-3 col-6">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/leon.png" alt="Site Logo" /></a>
+                        <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/logo/leon.png" alt="Site Logo" /></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -62,25 +57,23 @@
                     <div class="main-menu d-none d-lg-flex">
                         <ul>
                             <li class="no-children">
-                                <a href="index.html">Home</a>
+                                <a asp-controller="Home" asp-action="Index">Home</a>
 
                             </li>
                             <li class="has-children">
-                                <a href="products.html">Məhsullar</a>
+                                <a asp-controller="Home" asp-action="Product">Məhsullar</a>
                                 <ul class="sub-menu">
-                                    <li><a href="elevators.html">Liftlər</a></li>
-                                    <li><a href="escalators.html">Eskalatorlar</a></li>
-                                    <li><a href="parking.html">Parking</a></li>
-                                    <li><a href="crane.html">Yükqaldırıcı kranlar</a></li>
-                                    <li><a href="lifting_equipments.html">Qaldırıcı avadanlıqlar</a></li>
-                                    <li><a href="metalconstruction.html">Metalkonstruksiya</a></li>
+                                    @foreach (var item in Model.ProductCategories)
+                                    {
+                                        <li><a href="@item.Url">@item.CategoryName</a></li>}
+                                    
                                 </ul>
                             </li>
                             <li class="has-children">
-                                <a href="projects.html">Layihələrimiz</a>
+                                <a asp-controller="Home" asp-action="OurProjects">Layihələrimiz</a>
                                 <ul class="sub-menu">
-                                    <li><a href="elevator.html">Liftlər</a></li>
-                                    <li><a href="escalator.html">Eskalatorlar</a></li>
+                                    <li><a >Liftlər</a></li>
+                                    <li><a href="https://localhost:44316/Home/Product">Eskalatorlar</a></li>
                                     <li><a href="parking.html">Parking</a></li>
                                     <li><a href="cranes.html">Yükqaldırıcı kranlar</a></li>
                                     <li><a href="cranes.html">Qaldırıcı avadanlıqlar</a></li>
@@ -88,8 +81,8 @@
                                 </ul>
                             </li>
 
-                            <li><a href="about.html">Haqqımızda və ya Biz kimik</a></li>
-                            <li><a href="contact.html">Bizimlə əlaqə</a></li>
+                            <li><a asp-controller="Home" asp-action="About">Haqqımızda və ya Biz kimik</a></li>
+                            <li><a asp-controller="Home" asp-action="Contact">Bizimlə əlaqə</a></li>
                         </ul>
                     </div>
                     <!-- Main Menu End -->
@@ -133,13 +126,13 @@
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
 
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/plugins.min.js"></script>
+    <script src="~/assets/js/vendor.min.js"></script>
+    <script src="~/assets/js/plugins.min.js"></script>
 
 
 
     <!--Main JS-->
-    <script src="assets/js/main.js"></script>
+    <script src="~/assets/js/main.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 

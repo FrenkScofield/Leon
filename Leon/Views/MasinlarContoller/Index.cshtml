@@ -1,0 +1,92 @@
+﻿@model Leon.Models.VM.ViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Breadcrumb Section Start -->
+<div class="section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cr-breadcrumb-area">
+                    <h1 class="title">Eskalatorlar</h1>
+                    <ul class="breadcrumb-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><span>Eskalatorlar</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Section End -->
+<!-- Blog Section Start -->
+<div class="section section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Main Area Start -->
+            <div class="col-lg-9 m-auto">
+                <!-- Single Post Details Start -->
+                <div class="blog-details mb-10">
+
+                    <!-- Blog Details Image Start -->
+                    <!-- Description Start -->
+
+                    <h1> Eskalatorların aşağıdakı növləri təklif olunur! </h1>
+
+                    <div class="desc">
+                        <br>
+                        @foreach (var item in Model.Products)
+                        {
+
+                        <h2> @item.Title </h2>
+                        <p>@item.Description</p>
+
+                        <!-- Blockquote Start -->
+                        <div class="row mt-6">
+                            <div class="col-sm-6 col-12 mb-6 aos-init aos-animate" data-aos="fade-right" data-aos-delay="300">
+                                <img class="fit-image" src="~/img/@item.ImageCode" alt="Blog">
+                            </div>
+                            <div class="col-sm-6 col-12 mb-6 aos-init aos-animate" data-aos="fade-left" data-aos-delay="300">
+                                <div class="project-info">
+                                    <h4 class="title mb-6"></h4>
+                                    <ul class="mb-n1">
+                                        <li><span>Firma:</span>@item.Company</li>
+                                        <li><span>Yük qaldırma:</span>@item.Lifting</li>
+                                        <li><span>Hündürlüyü:</span>@item.Height</li>
+                                        <li><span>Uzunluğu:</span>@item.Length</li>
+                                        <li><span>İş rejimi:</span>@item.OperatingMode</li>
+                                        <li><span>İstehsal tarixi:</span>@item.DateOfProduction</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Blockquote End -->
+                        }
+                       
+                    </div>
+                   
+
+                </div>
+                <!-- Description End -->
+
+            </div>
+            <!-- Single Post Details Content End -->
+            <!-- Single Post Details Footer Start -->
+            <div class="single-post-details-footer mt-10" data-aos="fade-up" data-aos-delay="300">
+                <!-- Shear Article Start -->
+                <!-- Shear Article Start -->
+                <!-- Social Shear Start -->
+                <!-- Social Shear Start -->
+            </div>
+            <!-- Single Post Details Footer End -->
+
+        </div>
+        <!-- Single Post Details End -->
+
+
+    </div>
+    <!-- Blog Main Area End -->
+</div>
+       

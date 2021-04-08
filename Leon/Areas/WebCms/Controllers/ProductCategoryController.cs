@@ -42,16 +42,16 @@ namespace Leon.Areas.WebCms.Controllers
         //Post
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ProductCategory category, IFormFile file)
+        public async Task<IActionResult> Create( IFormFile file, ProductCategory productCategory)
         {
             if (ModelState.IsValid)
             {
                 if (file != null)
                 {
-                    category.ImageCode = await ImagesHelpers.ImageUploadAsync(_env.WebRootPath, file, "img", "category");
+                    productCategory.ImageCode = await ImagesHelpers.ImageUploadAsync(_env.WebRootPath, file, "img", "category");
                 }
 
-                var result = await _context.AddAsync(category);
+                var result = await _context.ProductCategories.AddAsync(productCategory);
                 await _context.SaveChangesAsync();
             }
             return RedirectToAction(nameof(Index));

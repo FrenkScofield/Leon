@@ -13,11 +13,9 @@ namespace Leon.Models.VM
         public IEnumerable<Product> Products { get; set; }
         public ProductCategory ProductCategory { get; set; }
         public IEnumerable<ProductCategory> ProductCategories  { get; set; }
-        public File File{ get; set; }
-        public IEnumerable<File> Files { get; set; }
-
-        public int Category { get; set; }
-
         public IEnumerable<SelectListItem> CategoryName { get; set; }
+        public IEnumerable<Slider> Sliders { get; set; }
+        public Slider Slider { get; set; }
+
     }
 }

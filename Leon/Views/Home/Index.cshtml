@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Leon.Models.VM.ViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 <!-- #region Jssor Slider Begin -->
@@ -85,25 +86,12 @@
     <!-- Loading Screen -->
 
     <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;">
-        <div style="background-color:#d3890e;">
-            <img data-u="image" style="opacity:0.8;" src="img/pb-beer-1513436-1600.jpg" />
-            <div data-ts="flat" data-p="75" data-po="40% 50%" style="left:150px;top:40px;width:800px;height:300px;position:absolute;">
-                <div data-to="50% 50%" data-t="0" style="left:50px;top:520px;width:400px;height:100px;position:absolute;color:#f0a329;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;letter-spacing:0.5em;">BEER</div>
-                <div data-to="50% 50%" data-t="5" style="left:50px;top:710px;width:700px;height:100px;position:absolute;color:#f0a329;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;letter-spacing:0.5em;">MACHINE</div>
+        @foreach (var item in Model.Sliders)
+        {
+            <div>
+                <img data-u="image" src="~/img/@item.ImageCode" />
             </div>
-        </div>
-        <div>
-            <img data-u="image" src="img/px-apartment-chairs-contemporary-2015560-1600.jpg" />
-        </div>
-        <div style="background-color:#000000;">
-            <img data-u="image" style="opacity:0.8;" src="img/px-back-view-boats-couple-2612852-1600.jpg" />
-        </div>
-        <div>
-            <img data-u="image" src="img/yamamoto.jpg" />
-        </div>
-        <div>
-            <img data-u="image" src="img/wine-1600.jpg" />
-        </div>
+        };
     </div>
     <!-- Bullet Navigator -->
     <div data-u="navigator" class="jssorb132" style="position:absolute;bottom:24px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -154,7 +142,7 @@
     <!-- Feature Box Wrapper Start -->
     <div class="feature-box-wrapper feature-box-border mb-7 pb-7" data-aos="fade-left" data-aos-delay="300">
         <div class="feature-box-icon">
-            <img src="assets/images/icon/about-icon-1.png" alt="About Icon">
+            <img src="~/assets/images/icon/about-icon-1.png" alt="About Icon">
         </div>
         <div class="feature-content">
             <h4 class="title">Cranes</h4>
@@ -165,7 +153,7 @@
     <!-- Feature Box Wrapper Start -->
     <div class="feature-box-wrapper feature-box-border mb-7 pb-7" data-aos="fade-left" data-aos-delay="400">
         <div class="feature-box-icon">
-            <img src="assets/images/icon/about-icon-2.png" alt="About Icon">
+            <img src="~/assets/images/icon/about-icon-2.png" alt="About Icon">
         </div>
         <div class="feature-content">
             <h4 class="title">Elevators</h4>
@@ -176,7 +164,7 @@
     <!-- Feature Box Wrapper Start -->
     <div class="feature-box-wrapper feature-box-border mb-7 pb-7" data-aos="fade-left" data-aos-delay="500">
         <div class="feature-box-icon">
-            <img src="assets/images/icon/about-icon-3.png" alt="About Icon">
+            <img src="~/assets/images/icon/about-icon-3.png" alt="About Icon">
         </div>
         <div class="feature-content">
             <h4 class="title">Escalators</h4>
@@ -218,7 +206,7 @@
                 <div class="single-project" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
                         <a class="project-overlay" href="project-details.html">
-                            <img src="assets/images/project/1.jpg" alt="Project Image">
+                            <img src="~/assets/images/project/1.jpg" alt="Project Image">
                         </a>
                     </div>
                     <div class="project-content">
@@ -236,7 +224,7 @@
                 <div class="single-project" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
                         <a class="project-overlay" href="project-details.html">
-                            <img src="assets/images/project/2.jpg" alt="Project Image">
+                            <img src="~/assets/images/project/2.jpg" alt="Project Image">
                         </a>
                     </div>
                     <div class="project-content">
@@ -252,7 +240,7 @@
                 <div class="single-project" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-image">
                         <a class="project-overlay" href="project-details.html">
-                            <img src="assets/images/project/3.jpg" alt="Project Image">
+                            <img src="~/assets/images/project/3.jpg" alt="Project Image">
                         </a>
                     </div>
                     <div class="project-content">
@@ -268,7 +256,7 @@
                 <div class="single-project" data-aos="fade-up" data-aos-delay="600">
                     <div class="project-image">
                         <a class="project-overlay" href="project-details.html">
-                            <img src="assets/images/project/4.jpg" alt="Project Image">
+                            <img src="~/assets/images/project/4.jpg" alt="Project Image">
                         </a>
                     </div>
                     <div class="project-content">
@@ -284,7 +272,7 @@
                 <div class="single-project" data-aos="fade-up" data-aos-delay="700">
                     <div class="project-image">
                         <a class="project-overlay" href="project-details.html">
-                            <img src="assets/images/project/5.jpg" alt="Project Image">
+                            <img src="~/assets/images/project/5.jpg" alt="Project Image">
                         </a>
                     </div>
                     <div class="project-content">
@@ -300,7 +288,7 @@
                 <div class="single-project" data-aos="fade-up" data-aos-delay="800">
                     <div class="project-image">
                         <a class="project-overlay" href="project-details.html">
-                            <img src="assets/images/project/6.jpg" alt="Project Image">
+                            <img src="~/assets/images/project/6.jpg" alt="Project Image">
                         </a>
                     </div>
                     <div class="project-content">
@@ -342,7 +330,7 @@
                 <div class="single-team-member" data-aos="fade-up" data-aos-delay="300">
                     <!-- Team Member Images Start -->
                     <div class="team-member-image">
-                        <img src="assets/images/team/1.jpg" alt="Team Member">
+                        <img src="~/assets/images/team/1.jpg" alt="Team Member">
                     </div>
                     <!-- Team Member Images End -->
                     <!-- Team Member Name/Social Identity Start -->
@@ -361,7 +349,7 @@
                 <div class="single-team-member" data-aos="fade-up" data-aos-delay="400">
                     <!-- Team Member Images Start -->
                     <div class="team-member-image">
-                        <img src="assets/images/team/2.jpg" alt="Team Member">
+                        <img src="~/assets/images/team/2.jpg" alt="Team Member">
                     </div>
                     <!-- Team Member Images End -->
                     <!-- Team Member Name/Social Identity Start -->
@@ -380,7 +368,7 @@
                 <div class="single-team-member" data-aos="fade-up" data-aos-delay="500">
                     <!-- Team Member Images Start -->
                     <div class="team-member-image">
-                        <img src="assets/images/team/3.jpg" alt="Team Member">
+                        <img src="~/assets/images/team/3.jpg" alt="Team Member">
                     </div>
                     <!-- Team Member Images End -->
                     <!-- Team Member Name/Social Identity Start -->
@@ -399,7 +387,7 @@
                 <div class="single-team-member" data-aos="fade-up" data-aos-delay="600">
                     <!-- Team Member Images Start -->
                     <div class="team-member-image">
-                        <img src="assets/images/team/4.jpg" alt="Team Member">
+                        <img src="~/assets/images/team/4.jpg" alt="Team Member">
                     </div>
                     <!-- Team Member Images End -->
                     <!-- Team Member Name/Social Identity Start -->
@@ -430,42 +418,42 @@
                             <!-- Single Brand Logo Start -->
                             <div class="swiper-slide">
                                 <div class="brand-logo" data-aos="fade-up" data-aos-delay="300">
-                                    <img src="assets/images/brand-logo/1.png" alt="Brand Logo">
+                                    <img src="~/assets/images/brand-logo/1.png" alt="Brand Logo">
                                 </div>
                             </div><br><br>
                             <!-- Single Brand Logo End -->
                             <!-- Single Brand Logo Start -->
                             <div class="swiper-slide">
                                 <div class="brand-logo" data-aos="fade-up" data-aos-delay="400">
-                                    <img src="assets/images/brand-logo/2.png" alt="Brand Logo">
+                                    <img src="~/assets/images/brand-logo/2.png" alt="Brand Logo">
                                 </div>
                             </div>
                             <!-- Single Brand Logo End -->
                             <!-- Single Brand Logo Start -->
                             <div class="swiper-slide">
                                 <div class="brand-logo" data-aos="fade-up" data-aos-delay="500">
-                                    <img src="assets/images/brand-logo/3.png" alt="Brand Logo">
+                                    <img src="~/assets/images/brand-logo/3.png" alt="Brand Logo">
                                 </div>
                             </div>
                             <!-- Single Brand Logo End -->
                             <!-- Single Brand Logo Start -->
                             <div class="swiper-slide">
                                 <div class="brand-logo" data-aos="fade-up" data-aos-delay="600">
-                                    <img src="assets/images/brand-logo/4.png" alt="Brand Logo">
+                                    <img src="~/assets/images/brand-logo/4.png" alt="Brand Logo">
                                 </div>
                             </div>
                             <!-- Single Brand Logo End -->
                             <!-- Single Brand Logo Start -->
                             <div class="swiper-slide">
                                 <div class="brand-logo" data-aos="fade-up" data-aos-delay="700">
-                                    <img src="assets/images/brand-logo/2.png" alt="Brand Logo">
+                                    <img src="~/assets/images/brand-logo/2.png" alt="Brand Logo">
                                 </div>
                             </div>
                             <!-- Single Brand Logo End -->
                             <!-- Single Brand Logo Start -->
                             <div class="swiper-slide">
                                 <div class="brand-logo" data-aos="fade-up" data-aos-delay="700">
-                                    <img src="assets/images/brand-logo/3.png" alt="Brand Logo">
+                                    <img src="~/assets/images/brand-logo/3.png" alt="Brand Logo">
                                 </div>
                             </div>
                             <!-- Single Brand Logo End -->
@@ -503,7 +491,7 @@
                 <div class="blog-single-post-wrapper" data-aos="fade-up" data-aos-delay="300">
                     <div class="blog-thumb">
                         <a class="blog-overlay" href="escalator.html">
-                            <img src="assets/images/blog/blog-post/1.jpg" alt="Blog Post">
+                            <img src="~/assets/images/blog/blog-post/1.jpg" alt="Blog Post">
                         </a>
                     </div>
                     <div class="blog-content">
@@ -523,7 +511,7 @@
                 <div class="blog-single-post-wrapper" data-aos="fade-up" data-aos-delay="400">
                     <div class="blog-thumb">
                         <a class="blog-overlay" href="elevator.html">
-                            <img src="assets/images/blog/blog-post/2.jpg" alt="Blog Post">
+                            <img src="~/assets/images/blog/blog-post/2.jpg" alt="Blog Post">
                         </a>
                     </div>
                     <div class="blog-content">
@@ -543,7 +531,7 @@
                 <div class="blog-single-post-wrapper" data-aos="fade-up" data-aos-delay="500">
                     <div class="blog-thumb">
                         <a class="blog-overlay" href="escalator.html">
-                            <img src="assets/images/blog/blog-post/3.jpg" alt="Blog Post">
+                            <img src="~/assets/images/blog/blog-post/3.jpg" alt="Blog Post">
                         </a>
                     </div>
                     <div class="blog-content">

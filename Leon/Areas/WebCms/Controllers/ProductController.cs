@@ -42,7 +42,7 @@ namespace Leon.Areas.WebCms.Controllers
             return View(viewModel);
         }
 
-        //Model Create Function Start
+        // Product Create Function Start
         public IActionResult Create()
         {
             ViewModel vm = new ViewModel()
@@ -82,7 +82,7 @@ namespace Leon.Areas.WebCms.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-        //Model Create Function End
+        // Product Create Function End
 
 
 
@@ -108,14 +108,12 @@ namespace Leon.Areas.WebCms.Controllers
             return View(vm);
         }
 
-
-
         //Post part
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(IFormFile file,ViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var DataProdatc = await _context.Products.FindAsync(viewModel.Product.Id);
 
@@ -132,9 +130,6 @@ namespace Leon.Areas.WebCms.Controllers
                 }
 
                 await _context.SaveChangesAsync();
-
-                //_context.Update(DataProdatc.ImageCode);
-
 
                 DataProdatc.Title = viewModel.Product.Title;
                     DataProdatc.Description = viewModel.Product.Description;
