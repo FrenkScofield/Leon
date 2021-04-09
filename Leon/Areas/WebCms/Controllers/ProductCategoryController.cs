@@ -16,7 +16,7 @@ namespace Leon.Areas.WebCms.Controllers
     [Area("WebCms")]
     // [Route("WebCms/")]
     [Route("WebCms/[controller]/[action]")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
 
     public class ProductCategoryController : Controller
     {

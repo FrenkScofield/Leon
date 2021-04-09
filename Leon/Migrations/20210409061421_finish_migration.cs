@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Leon.Migrations
 {
-    public partial class Adddatebase : Migration
+    public partial class finish_migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -43,13 +43,21 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Title)
                                 </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Description)
+
+                                <td width="430">
+                                    @if (item.Description.Length > 20)
+                                    {
+                                        @Html.Raw(item.Description.Substring(0, 50) + "...")
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw(item.Description)
+                                    }
                                 </td>
                                 <td>
                                     @item.DateOfProduction.ToShortDateString()
                                 </td>
-                               
+
                                 <td>
                                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn text-primary"><i class="fas fa-fw fa-pencil-alt"></i></a>
                                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn text-warning" onclick="return confirm('Are you sure you want to delete it')"><i class="fas fa-fw fa-trash"></i></a>

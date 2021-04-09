@@ -55,9 +55,17 @@ namespace Leon.Areas.WebCms.Controllers
                 ModelState.AddModelError("Email", "Email or password is invalid");
                 return View(loginViewModel);
             }
+
+            //   var rol = await _roleManager.Roles.Where(r => r.Name ==  "Admin").FirstOrDefault();
+
+            if (!await _roleManager.RoleExistsAsync("Admin"))
+            {
+                return NotFound();
+            }
+
             return RedirectToAction("Index", "AdminHome", new { area = "WebCms" });
         }
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
