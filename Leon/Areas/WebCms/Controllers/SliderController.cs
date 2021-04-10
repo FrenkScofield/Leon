@@ -16,7 +16,7 @@ namespace Leon.Areas.WebCms.Controllers
     [Area("WebCms")]
     // [Route("WebCms/")]
     [Route("WebCms/[controller]/[action]")]
-   [Authorize]
+   ///[Authorize]
 
     public class SliderController : Controller
     {

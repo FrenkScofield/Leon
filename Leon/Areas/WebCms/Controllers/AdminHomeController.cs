@@ -9,7 +9,7 @@ namespace Leon.Areas.WebCms.Controllers
 {
     [Area("WebCms")]
     //[Route("WebCms/")]
-    [Authorize]
+    //[Authorize]
     [Route("WebCms/[controller]/[action]")]
     public class AdminHomeController : Controller
     {
