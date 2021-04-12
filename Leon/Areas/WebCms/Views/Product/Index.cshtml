@@ -45,9 +45,9 @@
                                 </td>
 
                                 <td width="430">
-                                    @if (item.Description.Length > 20)
+                                    @if (item.Description.Length > 40)
                                     {
-                                        @Html.Raw(item.Description.Substring(0, 50) + "...")
+                                        @Html.Raw(item.Description.Substring(0, 40) + "...")
                                     }
                                     else
                                     {

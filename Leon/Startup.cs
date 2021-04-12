@@ -84,11 +84,7 @@ namespace Leon
             //    options.Cookie.HttpOnly = true;
             //    options.Cookie.IsEssential = true;
             //});
-          
-         
-
         }
-
 
 
         //create admin role
@@ -158,7 +154,11 @@ namespace Leon
 
             app.UseEndpoints(endpoints =>
             {
-                
+                endpoints.MapControllerRoute(
+             name: "default",
+             pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
                 endpoints.MapAreaControllerRoute(
                  name: "areas", "WebCms",
                  pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
@@ -168,10 +168,7 @@ namespace Leon
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{url?}");
 
-                endpoints.MapControllerRoute(
-               name: "default",
-               pattern: "{controller=Home}/{action=Index}/{id?}");
-
+              
             });
 
 

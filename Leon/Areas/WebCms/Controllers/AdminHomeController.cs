@@ -18,5 +18,9 @@ namespace Leon.Areas.WebCms.Controllers
         {
             return View();
         }
+        public IActionResult Delete()
+        {
+            return View();
+        }
     }
 }
