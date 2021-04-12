@@ -15252,11 +15252,7 @@ ul li {
   color: #ffb300;
 }
 
-.main-menu > ul > li.has-children > a::after {
-  content: "\f107";
-  font-family: 'fontAwesome';
-  padding-left: 5px;
-}
+
 
 .main-menu > ul > li:hover .sub-menu {
   margin-top: 0;

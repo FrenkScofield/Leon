@@ -6,15 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>leoncranelisft.az</title>
-
     <!-- Favicons -->
     <link rel="shortcut icon" href="~/assets/images/favicon.ico">
 
-    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
+    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
     <link rel="stylesheet" href="~/assets/css/vendor.min.css">
     <link rel="stylesheet" href="~/assets/css/plugins.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="~/assets/css/style.css">
 
 
@@ -30,7 +30,7 @@
                 <div class="col-lg-8 col-md-12">
                     <ul class="header-top-links">
                         <li><i class="fa fa-phone"></i><a href="#"> +994 12 492 7983</a></li>
-                        <li><i class="fa fa-envelope-o"></i><a href="#"> office@leoncranelifts.az</a></li>
+                        <li><i class="far fa-envelope"></i><a href="#"> office@leoncranelifts.az</a></li>
                         <li><i class="fa fa-clock-o"></i> <span>7/24</span> </li>
                     </ul>
                 </div>
@@ -61,17 +61,18 @@
 
                             </li>
                             @(await Component.InvokeAsync("ProCategories"))
-                            <li class="has-children">
-                                <a asp-controller="Home" asp-action="OurProjects">Layihələrimiz</a>
-                                <ul class="sub-menu">
-                                    <li><a>Liftlər</a></li>
-                                    <li><a href="https://localhost:44316/Home/Product">Eskalatorlar</a></li>
-                                    <li><a href="parking.html">Parking</a></li>
-                                    <li><a href="cranes.html">Yükqaldırıcı kranlar</a></li>
-                                    <li><a href="cranes.html">Qaldırıcı avadanlıqlar</a></li>
-                                    <li><a href="constr.html">Metalkonstruksiya</a></li>
-                                </ul>
-                            </li>
+                        <li class="has-children">
+                            <a asp-controller="Home" asp-action="OurProjects">Layihələrimiz</a>
+                            <i class="fas fa-chevron-down"></i>
+                            <ul class="sub-menu">
+                                <li><a>Liftlər</a></li>
+                                <li><a href="https://localhost:44316/Home/Product">Eskalatorlar</a></li>
+                                <li><a href="parking.html">Parking</a></li>
+                                <li><a href="cranes.html">Yükqaldırıcı kranlar</a></li>
+                                <li><a href="cranes.html">Qaldırıcı avadanlıqlar</a></li>
+                                <li><a href="constr.html">Metalkonstruksiya</a></li>
+                            </ul>
+                        </li>
 
                             <li><a asp-controller="Home" asp-action="About">Haqqımızda və ya Biz kimik</a></li>
                             <li><a asp-controller="Home" asp-action="Contact">Bizimlə əlaqə</a></li>
