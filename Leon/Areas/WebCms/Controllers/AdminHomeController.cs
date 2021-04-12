@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Leon.Areas.WebCms.Controllers
 {
-    [Area("WebCms")]
+    //[Authorize(Roles = "Admin")]
+   [Area("WebCms")]
     //[Route("WebCms/")]
     //[Authorize]
     [Route("WebCms/[controller]/[action]")]

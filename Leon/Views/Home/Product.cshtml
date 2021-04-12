@@ -31,11 +31,10 @@
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb-n8">
                 @foreach (var item in Model.ProductCategories)
                 {
-
                     <div class="col mb-8">
                         <div class="single-project" data-aos="fade-down" data-aos-delay="300">
                             <a asp-controller="Home" asp-action="Product" asp-route-productCategoryId="@item.Id">
-                                content
+                                
                                 <div class="project-image">
 
                                     <img src="~/img/@item.ImageCode" alt="Project Image">
@@ -98,11 +97,11 @@ else
                                             <h4 class="title mb-6"></h4>
                                             <ul class="mb-n1">
                                                 <li><span>Firma:</span>@item.Company</li>
-                                                <li><span>Yük qaldırma:</span>@item.Lifting</li>
-                                                <li><span>Hündürlüyü:</span>@item.Height</li>
+                                                <li><span>Yük qaldırma:</span>@item.Lifting t</li>
+                                                <li><span>Hündürlüyü:</span>@item.Height m</li>
                                                 <li><span>Uzunluğu:</span>@item.Length</li>
                                                 <li><span>İş rejimi:</span>@item.OperatingMode</li>
-                                                <li><span>İstehsal tarixi:</span>@item.DateOfProduction</li>
+                                                <li><span>İstehsal tarixi:</span> @item.DateOfProduction</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Leon.Models.BLL;
 using Leon.Models.DAL;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +31,12 @@ namespace Leon
         {
             services.AddControllersWithViews();
 
-        
+
+            //services.ConfigureApplicationCookie(options =>
+            //{
+            //    options.AccessDeniedPath = "/WebCms/Account/Login";
+            //    options.LoginPath = "/WebCms/Account/Login";
+            //});
 
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
@@ -56,7 +62,34 @@ namespace Leon
             {
                 options.UseSqlServer(_configuration["ConnectionStrings:Default"]);
             });
+
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromDays(1);
+                options.AccessDeniedPath = "/WebCms/Account/Login";
+                options.LoginPath = "/WebCms/Account/Login";
+                options.LogoutPath = "/WebCms/Account/Logout";
+
+            });
+            //services.AddDistributedMemoryCache();
+            //services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromDays(1);
+            //    options.Cookie.HttpOnly = true;
+            //    options.Cookie.IsEssential = true;
+            //});
+          
+         
+
         }
+
+
 
         //create admin role
         private async Task CreateRoles(IServiceProvider serviceProvider)
@@ -117,19 +150,15 @@ namespace Leon
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+            // app.UseAuthentication();
+           
 
             app.UseEndpoints(endpoints =>
             {
                 
-                
-                endpoints.MapControllerRoute(
-                  name: "default",
-                  pattern: "{controller=Home}/{action=Index}/{id?}");
-
                 endpoints.MapAreaControllerRoute(
                  name: "areas", "WebCms",
                  pattern: "{area:exists}/{controller=Account}/{action=Login}/{id?}");
@@ -139,6 +168,9 @@ namespace Leon
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{url?}");
 
+                endpoints.MapControllerRoute(
+               name: "default",
+               pattern: "{controller=Home}/{action=Index}/{id?}");
 
             });
 
