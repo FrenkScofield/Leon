@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Leon.Controllers
 {
-    
+   
     public class HomeController : Controller
     {
         private readonly MyContext _context;
