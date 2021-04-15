@@ -22,6 +22,7 @@
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Tarih</th>
+                                <th>Show / Hide</th>
                                 <th><span style="color:Highlight">Edit</span> - <span style="color:red">Delete</span></th>
                             </tr>
                         </thead>
@@ -56,6 +57,16 @@
                                 </td>
                                 <td>
                                     @item.DateOfProduction.ToShortDateString()
+                                </td>
+                                <td>
+                                    @if (item.Approve == true)
+                                    {
+                                        <span class="btn btn-success">Show</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="btn btn-warning">Hide</span>
+                                    }
                                 </td>
 
                                 <td>

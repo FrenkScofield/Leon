@@ -75,7 +75,8 @@ namespace Leon.Areas.WebCms.Controllers
                     DateOfProduction = viewModel.Product.DateOfProduction,
                     ProductCategoryId = viewModel.ProductCategory.Id,
                     ImageCode = await ImagesHelpers.ImageUploadAsync(_env.WebRootPath, file, "img", "category"),
-                    ProductCategory = Catagory
+                    ProductCategory = Catagory,
+                    Approve = viewModel.Product.Approve
 
                 };
                 await _context.Products.AddAsync(model);
@@ -134,16 +135,19 @@ namespace Leon.Areas.WebCms.Controllers
 
                 await _context.SaveChangesAsync();
 
-                DataProdatc.Title = viewModel.Product.Title;
+                    DataProdatc.Title = viewModel.Product.Title;
                     DataProdatc.Description = viewModel.Product.Description;
                     DataProdatc.Company = viewModel.Product.Company;
                     DataProdatc.Lifting = viewModel.Product.Lifting;
                     DataProdatc.Height = viewModel.Product.Height;
-                DataProdatc.Length = viewModel.Product.Length;
+                    DataProdatc.Length = viewModel.Product.Length;
                     DataProdatc.OperatingMode = viewModel.Product.OperatingMode;
                     DataProdatc.DateOfProduction = viewModel.Product.DateOfProduction;
                     DataProdatc.ProductCategoryId = viewModel.ProductCategory.Id;
-                   
+                    DataProdatc.Approve = viewModel.Product.Approve;
+
+
+
 
 
                 await _context.SaveChangesAsync();

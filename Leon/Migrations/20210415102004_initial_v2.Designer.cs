@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Leon.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210413065356_iniial_V1")]
-    partial class iniial_V1
+    [Migration("20210415102004_initial_v2")]
+    partial class initial_v2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,6 +60,9 @@ namespace Leon.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("Approve")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");

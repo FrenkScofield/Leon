@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Leon.Migrations
 {
-    public partial class iniial_V1 : Migration
+    public partial class initial_v2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -212,6 +212,7 @@ namespace Leon.Migrations
                     Height = table.Column<int>(nullable: false),
                     Length = table.Column<int>(nullable: false),
                     OperatingMode = table.Column<string>(nullable: true),
+                    Approve = table.Column<bool>(nullable: true),
                     DateOfProduction = table.Column<DateTime>(nullable: false),
                     ProductCategoryId = table.Column<int>(nullable: false)
                 },

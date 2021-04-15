@@ -16,6 +16,7 @@ namespace Leon.Models.BLL
         public int Height { get; set; }
         public int Length { get; set; }
         public string  OperatingMode { get; set; }
+        public bool? Approve { get; set; }
         public DateTime DateOfProduction { get; set; }
 
         //foreign key connection

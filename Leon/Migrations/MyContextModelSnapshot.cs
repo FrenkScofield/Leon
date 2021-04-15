@@ -59,6 +59,9 @@ namespace Leon.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool?>("Approve")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
