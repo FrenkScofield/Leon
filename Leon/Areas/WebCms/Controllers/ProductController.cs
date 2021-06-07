@@ -146,10 +146,6 @@ namespace Leon.Areas.WebCms.Controllers
                     DataProdatc.ProductCategoryId = viewModel.ProductCategory.Id;
                     DataProdatc.Approve = viewModel.Product.Approve;
 
-
-
-
-
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Leon.Migrations
 {
-    public partial class initial_v2 : Migration
+    public partial class initial_v3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

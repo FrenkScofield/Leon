@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label asp-for="@Model.Product.Description" class="control-label"></label>
                                 <textarea asp-for="@Model.Product.Description" id="Name" class="form-control" style="height:140px;"></textarea>
-                                <span asp-validation-for="@Model.Product.Title" class="text-danger"></span>
+                                <span asp-validation-for="@Model.Product.Description" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -97,6 +97,7 @@
                            
 
                         </div>
+                    </div>
                     <input type="hidden" asp-for="@Model.Product.Id" />
                     <div class="form-group">
                         <input type="submit" value="Update" id="btnAddModels" class="btn btn-success name" />

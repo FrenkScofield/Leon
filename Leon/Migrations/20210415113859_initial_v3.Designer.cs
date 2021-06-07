@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Leon.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20210415102004_initial_v2")]
-    partial class initial_v2
+    [Migration("20210415113859_initial_v3")]
+    partial class initial_v3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
