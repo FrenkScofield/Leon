@@ -27,6 +27,8 @@
   <ItemGroup>
     <Compile Include="Migrations\20210415113859_initial_v3.cs" />
     <Compile Include="Migrations\20210415113859_initial_v3.Designer.cs" />
+    <Compile Include="Migrations\20221010140508_first.cs" />
+    <Compile Include="Migrations\20221010140508_first.Designer.cs" />
     <Compile Include="Migrations\MyContextModelSnapshot.cs" />
   </ItemGroup>
 
