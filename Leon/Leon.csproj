@@ -8,26 +8,16 @@
   <ItemGroup>
     <Compile Remove="Areas\WebCms\Data\**" />
     <Compile Remove="Areas\WebCms\Models\**" />
-    <Compile Remove="Migrations\**" />
     <Compile Remove="wwwroot\img\imgProduct\**" />
     <Content Remove="Areas\WebCms\Data\**" />
     <Content Remove="Areas\WebCms\Models\**" />
-    <Content Remove="Migrations\**" />
     <Content Remove="wwwroot\img\imgProduct\**" />
     <EmbeddedResource Remove="Areas\WebCms\Data\**" />
     <EmbeddedResource Remove="Areas\WebCms\Models\**" />
-    <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="wwwroot\img\imgProduct\**" />
     <None Remove="Areas\WebCms\Data\**" />
     <None Remove="Areas\WebCms\Models\**" />
-    <None Remove="Migrations\**" />
     <None Remove="wwwroot\img\imgProduct\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Migrations\20210415113859_initial_v3.cs" />
-    <Compile Include="Migrations\20210415113859_initial_v3.Designer.cs" />
-    <Compile Include="Migrations\MyContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
